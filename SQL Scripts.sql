@@ -1,7 +1,150 @@
--- #TABLE CREATION AND INSERTION
+--- Initially the Dataset "actual_data" was in a wide format with lots of columns - difficult to analyse
+-- So, I have converted them into a long format table "agridata" with less columns and inserted the actual data values from the Actual Wide Table
 
---- I have divided my actual data table "agridata"-uncleaned into segments as 5 different tables and inserted the values accordingly ---
---- Below is the Code ---
+-- << BELOW IS THE CODE FOR IT >> --
+
+-- Step 1: Create the long-format table
+CREATE TABLE agridata (
+    dist_code INT,
+    year INT,
+    state_code INT,
+    state_name VARCHAR(255),
+    dist_name VARCHAR(255),
+    crop_name VARCHAR(50),
+    area_1000_ha FLOAT,
+    production_1000_tons FLOAT,
+    yield_kg_per_ha FLOAT
+);
+
+-- Step 2: Insert data for each crop
+
+-- RICE
+INSERT INTO agridata
+SELECT `Dist Code`, `Year`, `State Code`, `State Name`, `Dist Name`, 'Rice',
+`RICE AREA (1000 ha)`, `RICE PRODUCTION (1000 tons)`, `RICE YIELD (Kg per ha)` FROM actual_data;
+
+-- WHEAT
+INSERT INTO agridata
+SELECT `Dist Code`, `Year`, `State Code`, `State Name`, `Dist Name`, 'Wheat',
+`WHEAT AREA (1000 ha)`, `WHEAT PRODUCTION (1000 tons)`, `WHEAT YIELD (Kg per ha)` FROM actual_data;
+
+-- MAIZE
+INSERT INTO agridata
+SELECT `Dist Code`, `Year`, `State Code`, `State Name`, `Dist Name`, 'Maize',
+`MAIZE AREA (1000 ha)`, `MAIZE PRODUCTION (1000 tons)`, `MAIZE YIELD (Kg per ha)` FROM actual_data;
+
+-- KHARIF SORGHUM
+INSERT INTO agridata
+SELECT `Dist Code`, `Year`, `State Code`, `State Name`, `Dist Name`, 'Kharif Sorghum',
+`KHARIF SORGHUM AREA (1000 ha)`, `KHARIF SORGHUM PRODUCTION (1000 tons)`, `KHARIF SORGHUM YIELD (Kg per ha)` FROM actual_data;
+
+-- RABI SORGHUM
+INSERT INTO agridata
+SELECT `Dist Code`, `Year`, `State Code`, `State Name`, `Dist Name`, 'Rabi Sorghum',
+`RABI SORGHUM AREA (1000 ha)`, `RABI SORGHUM PRODUCTION (1000 tons)`, `RABI SORGHUM YIELD (Kg per ha)` FROM actual_data;
+
+-- SORGHUM
+INSERT INTO agridata
+SELECT `Dist Code`, `Year`, `State Code`, `State Name`, `Dist Name`, 'Sorghum',
+`SORGHUM AREA (1000 ha)`, `SORGHUM PRODUCTION (1000 tons)`, `SORGHUM YIELD (Kg per ha)` FROM actual_data;
+
+-- PEARL MILLET
+INSERT INTO agridata
+SELECT `Dist Code`, `Year`, `State Code`, `State Name`, `Dist Name`, 'Pearl Millet',
+`PEARL MILLET AREA (1000 ha)`, `PEARL MILLET PRODUCTION (1000 tons)`, `PEARL MILLET YIELD (Kg per ha)` FROM actual_data;
+
+-- FINGER MILLET
+INSERT INTO agridata
+SELECT `Dist Code`, `Year`, `State Code`, `State Name`, `Dist Name`, 'Finger Millet',
+`FINGER MILLET AREA (1000 ha)`, `FINGER MILLET PRODUCTION (1000 tons)`, `FINGER MILLET YIELD (Kg per ha)` FROM actual_data;
+
+-- BARLEY
+INSERT INTO agridata
+SELECT `Dist Code`, `Year`, `State Code`, `State Name`, `Dist Name`, 'Barley',
+`BARLEY AREA (1000 ha)`, `BARLEY PRODUCTION (1000 tons)`, `BARLEY YIELD (Kg per ha)` FROM actual_data;
+
+-- CHICKPEA
+INSERT INTO agridata
+SELECT `Dist Code`, `Year`, `State Code`, `State Name`, `Dist Name`, 'Chickpea',
+`CHICKPEA AREA (1000 ha)`, `CHICKPEA PRODUCTION (1000 tons)`, `CHICKPEA YIELD (Kg per ha)` FROM actual_data;
+
+-- PIGEONPEA
+INSERT INTO agridata
+SELECT `Dist Code`, `Year`, `State Code`, `State Name`, `Dist Name`, 'Pigeonpea',
+`PIGEONPEA AREA (1000 ha)`, `PIGEONPEA PRODUCTION (1000 tons)`, `PIGEONPEA YIELD (Kg per ha)` FROM actual_data;
+
+-- MINOR PULSES
+INSERT INTO agridata
+SELECT `Dist Code`, `Year`, `State Code`, `State Name`, `Dist Name`, 'Minor Pulses',
+`MINOR PULSES AREA (1000 ha)`, `MINOR PULSES PRODUCTION (1000 tons)`, `MINOR PULSES YIELD (Kg per ha)` FROM actual_data;
+
+-- GROUNDNUT
+INSERT INTO agridata
+SELECT `Dist Code`, `Year`, `State Code`, `State Name`, `Dist Name`, 'Groundnut',
+`GROUNDNUT AREA (1000 ha)`, `GROUNDNUT PRODUCTION (1000 tons)`, `GROUNDNUT YIELD (Kg per ha)` FROM actual_data;
+
+-- SESAMUM
+INSERT INTO agridata
+SELECT `Dist Code`, `Year`, `State Code`, `State Name`, `Dist Name`, 'Sesamum',
+`SESAMUM AREA (1000 ha)`, `SESAMUM PRODUCTION (1000 tons)`, `SESAMUM YIELD (Kg per ha)` FROM actual_data;
+
+-- RAPESEED AND MUSTARD
+INSERT INTO agridata
+SELECT `Dist Code`, `Year`, `State Code`, `State Name`, `Dist Name`, 'Rapeseed and Mustard',
+`RAPESEED AND MUSTARD AREA (1000 ha)`, `RAPESEED AND MUSTARD PRODUCTION (1000 tons)`, `RAPESEED AND MUSTARD YIELD (Kg per ha)` FROM actual_data;
+
+-- SAFFLOWER
+INSERT INTO agridata
+SELECT `Dist Code`, `Year`, `State Code`, `State Name`, `Dist Name`, 'Safflower',
+`SAFFLOWER AREA (1000 ha)`, `SAFFLOWER PRODUCTION (1000 tons)`, `SAFFLOWER YIELD (Kg per ha)` FROM actual_data;
+
+-- CASTOR
+INSERT INTO agridata
+SELECT `Dist Code`, `Year`, `State Code`, `State Name`, `Dist Name`, 'Castor',
+`CASTOR AREA (1000 ha)`, `CASTOR PRODUCTION (1000 tons)`, `CASTOR YIELD (Kg per ha)` FROM actual_data;
+
+-- LINSEED
+INSERT INTO agridata
+SELECT `Dist Code`, `Year`, `State Code`, `State Name`, `Dist Name`, 'Linseed',
+`LINSEED AREA (1000 ha)`, `LINSEED PRODUCTION (1000 tons)`, `LINSEED YIELD (Kg per ha)` FROM actual_data;
+
+-- SUNFLOWER
+INSERT INTO agridata
+SELECT `Dist Code`, `Year`, `State Code`, `State Name`, `Dist Name`, 'Sunflower',
+`SUNFLOWER AREA (1000 ha)`, `SUNFLOWER PRODUCTION (1000 tons)`, `SUNFLOWER YIELD (Kg per ha)` FROM actual_data;
+
+-- SOYABEAN
+INSERT INTO agridata
+SELECT `Dist Code`, `Year`, `State Code`, `State Name`, `Dist Name`, 'Soyabean',
+`SOYABEAN AREA (1000 ha)`, `SOYABEAN PRODUCTION (1000 tons)`, `SOYABEAN YIELD (Kg per ha)` FROM actual_data;
+
+-- OILSEEDS
+INSERT INTO agridata
+SELECT `Dist Code`, `Year`, `State Code`, `State Name`, `Dist Name`, 'Oilseeds',
+`OILSEEDS AREA (1000 ha)`, `OILSEEDS PRODUCTION (1000 tons)`, `OILSEEDS YIELD (Kg per ha)` FROM actual_data;
+
+-- SUGARCANE
+INSERT INTO agridata
+SELECT `Dist Code`, `Year`, `State Code`, `State Name`, `Dist Name`, 'Sugarcane',
+`SUGARCANE AREA (1000 ha)`, `SUGARCANE PRODUCTION (1000 tons)`, `SUGARCANE YIELD (Kg per ha)` FROM actual_data;
+
+-- COTTON
+INSERT INTO agridata
+SELECT `Dist Code`, `Year`, `State Code`, `State Name`, `Dist Name`, 'Cotton',
+`COTTON AREA (1000 ha)`, `COTTON PRODUCTION (1000 tons)`, `COTTON YIELD (Kg per ha)` FROM actual_data;
+
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+-- # NEW SEGMENTED TABLES - << CREATION AND INSERTION >>
+
+--- I have then divided my long format table "agridata"-uncleaned into segments as 5 different tables categorizing them for easy cleaaning --- 
+-- and inserted the values accordingly ---
+
+-- << BELOW IS THE CODE FOR IT >> --
 
 
 --- Cereals Table (cereals_data) --->
